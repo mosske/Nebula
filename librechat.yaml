@@ -17,9 +17,11 @@ endpoints:
       baseURL: "https://openrouter.ai/api/v1"
       models:
         default:
+          # --- Verified Multimodal / Vision Models ---
           - "minimax/minimax-m3:free"
           - "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
-          - "meta-llama/llama-3.3-70b-instruct:free"
+          
+          # --- Dynamic Free Fallback Router ---
           - "openrouter/free"
         fetch: false
       stream: true
