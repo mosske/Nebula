@@ -23,10 +23,12 @@ endpoints:
         fetch: false
       stream: true
 
-# Add Composio MCP Server definition
 mcpServers:
   composio:
-    type: "streamable-http"
+    type: "sse"
     url: "https://connect.composio.dev/mcp"
+    requiresOAuth: false
+    startup: false
+    initTimeout: 5000
     headers:
       X-API-Key: "${COMPOSIO_API_KEY}"
