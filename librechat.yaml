@@ -26,7 +26,9 @@ endpoints:
 mcpServers:
   composio:
     type: "sse"
-    url: "https://connect.composio.dev/mcp"
+    url: "https://connect.composio.dev/mcp?api_key=${COMPOSIO_API_KEY}"
+    requiresOAuth: false
     headers:
       x-api-key: "${COMPOSIO_API_KEY}"
+
 
