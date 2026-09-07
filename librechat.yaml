@@ -4,7 +4,7 @@ endpoints:
   custom:
     - name: "HuggingFace"
       apiKey: "${HUGGINGFACE_TOKEN}"
-      baseURL: "https://api-inference.huggingface.co/v1"
+      baseURL: "https://router.huggingface.co/v1"
       models:
         default:
           - "meta-llama/Meta-Llama-3-8B-Instruct"
@@ -15,4 +15,6 @@ endpoints:
           - "zai-org/GLM-5.3-Flash"
           - "zai-org/GLM-5.3"
           - "moonshotai/Kimi-K3"
+        fetch: false
+      stream: false
       dropParams: ["top_p"]
