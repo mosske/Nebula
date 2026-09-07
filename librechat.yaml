@@ -28,7 +28,6 @@ mcpServers:
     type: "sse"
     url: "https://connect.composio.dev/mcp"
     requiresOAuth: false
-    startup: false
-    initTimeout: 5000
     headers:
       X-API-Key: "${COMPOSIO_API_KEY}"
+      X-User-ID: "{{LIBRECHAT_USER_ID}}"
