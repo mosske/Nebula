@@ -12,13 +12,15 @@ endpoints:
       stream: false
       dropParams: ["top_p", "presence_penalty", "frequency_penalty", "stop"]
 
-    - name: "OpenRouter (Free + Vision)"
+    - name: "OpenRouter"
       apiKey: "${OPENROUTER_API_KEY}"
       baseURL: "https://openrouter.ai/api/v1"
       models:
         default:
+          - "minimax/minimax-m3:free"
           - "qwen/qwen-2-vl-7b-instruct:free"
           - "google/gemma-2-9b-it:free"
           - "meta-llama/llama-3.3-70b-instruct:free"
+          - "qwen/qwen-2.5-coder-32b-instruct:free"
         fetch: false
       stream: true
