@@ -7,14 +7,18 @@ endpoints:
       baseURL: "https://router.huggingface.co/v1"
       models:
         default:
-          - "meta-llama/Meta-Llama-3-8B-Instruct:fastest"
-          - "mistralai/Mistral-7B-Instruct-v0.2:fastest"
-          - "google/gemma-1.1-7b-it:fastest"
-          - "HuggingFaceH4/zephyr-7b-beta"
-          - "Qwen/Qwen3.8-27B:fastest"
-          - "zai-org/GLM-5.3-Flash:fastest"
-          - "zai-org/GLM-5.3:fastest"
-          - "moonshotai/Kimi-K3:fastest"
+          - "Qwen/Qwen2.5-Coder-32B-Instruct"
         fetch: false
       stream: false
       dropParams: ["top_p", "presence_penalty", "frequency_penalty", "stop"]
+
+    - name: "OpenRouter (Free + Vision)"
+      apiKey: "${OPENROUTER_API_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default:
+          - "qwen/qwen-2-vl-7b-instruct:free"
+          - "google/gemma-2-9b-it:free"
+          - "meta-llama/llama-3.3-70b-instruct:free"
+        fetch: false
+      stream: true
