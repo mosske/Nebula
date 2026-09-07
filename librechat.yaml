@@ -7,9 +7,9 @@ endpoints:
       baseURL: "https://router.huggingface.co/v1"
       models:
         default:
+          - "google/gemma-1.1-7b-it"
           - "meta-llama/Meta-Llama-3-8B-Instruct"
           - "mistralai/Mistral-7B-Instruct-v0.2"
-          - "google/gemma-1.1-7b-it"
           - "HuggingFaceH4/zephyr-7b-beta"
           - "Qwen/Qwen3.8-27B"
           - "zai-org/GLM-5.3-Flash"
@@ -17,4 +17,4 @@ endpoints:
           - "moonshotai/Kimi-K3"
         fetch: false
       stream: false
-      dropParams: ["top_p"]
+      dropParams: ["top_p", "presence_penalty", "frequency_penalty", "stop"]
