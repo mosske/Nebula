@@ -17,11 +17,16 @@ endpoints:
       baseURL: "https://openrouter.ai/api/v1"
       models:
         default:
-          # --- Verified Multimodal / Vision Models ---
           - "minimax/minimax-m3:free"
           - "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
-          
-          # --- Dynamic Free Fallback Router ---
           - "openrouter/free"
         fetch: false
       stream: true
+
+# Add Composio MCP Server definition
+mcpServers:
+  composio:
+    type: "streamable-http"
+    url: "https://connect.composio.dev/mcp"
+    headers:
+      X-API-Key: "${COMPOSIO_API_KEY}"
