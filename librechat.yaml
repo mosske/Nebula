@@ -1,5 +1,7 @@
 version: 1.3.15
 
+cache: true
+
 endpoints:
   custom:
     - name: "HuggingFace"
@@ -10,7 +12,11 @@ endpoints:
           - "Qwen/Qwen2.5-Coder-32B-Instruct"
         fetch: false
       stream: false
-      dropParams: ["top_p", "presence_penalty", "frequency_penalty", "stop"]
+      dropParams:
+        - "top_p"
+        - "presence_penalty"
+        - "frequency_penalty"
+        - "stop"
 
     - name: "OpenRouter"
       apiKey: "${OPENROUTER_API_KEY}"
@@ -22,15 +28,3 @@ endpoints:
           - "openrouter/free"
         fetch: false
       stream: true
-
-mcpServers:
-  composio:
-    type: "stdio"
-    command: "mcp-remote"
-    args:
-      - "https://connect.composio.dev/mcp"
-      - "--header"
-      - "x-api-key: ${COMPOSIO_API_KEY}"
-    timeout: 60000
-      - "x-api-key: ${COMPOSIO_API_KEY}"
-    timeout: 60000
