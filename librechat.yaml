@@ -32,4 +32,4 @@ mcpServers:
       - "mcp-remote"
       - "https://connect.composio.dev/mcp"
       - "--header"
-      - "x-api-key: ak_IylGea3ZTaHcN7Zs6Bpd"
+      - "x-api-key: ${COMPOSIO_API_KEY}"
