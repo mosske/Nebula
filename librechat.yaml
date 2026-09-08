@@ -27,4 +27,6 @@ mcpServers:
   composio:
     type: "sse"
     url: "https://connect.composio.dev/mcp"
-    requiresOAuth: true
+    requiresOAuth: false
+    headers:
+      Authorization: "Bearer ${COMPOSIO_API_KEY}"
