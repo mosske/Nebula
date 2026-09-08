@@ -26,11 +26,11 @@ endpoints:
 mcpServers:
   composio:
     type: "stdio"
-    command: "npx"
+    command: "mcp-remote"
     args:
-      - "--yes"
-      - "mcp-remote@latest"
       - "https://connect.composio.dev/mcp"
       - "--header"
+      - "x-api-key: ${COMPOSIO_API_KEY}"
+    timeout: 60000
       - "x-api-key: ${COMPOSIO_API_KEY}"
     timeout: 60000
