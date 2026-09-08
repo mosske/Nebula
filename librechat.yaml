@@ -28,8 +28,9 @@ mcpServers:
     type: "stdio"
     command: "npx"
     args:
-      - "-y"
-      - "mcp-remote"
+      - "--yes"
+      - "mcp-remote@latest"
       - "https://connect.composio.dev/mcp"
       - "--header"
       - "x-api-key: ${COMPOSIO_API_KEY}"
+    timeout: 60000
